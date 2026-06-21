@@ -51,8 +51,32 @@ The `suggestion/` folder contains sample stories and their generated scene image
 
 ## Screenshots
 
-TODO: Add screenshots of a sample story and its corresponding image-book.
+**Landing Screen**
+![landing_screen](https://github.com/hassanayoub409/agent-stories/blob/c0541cb5cb042d54f049971ec5a69c5611c30e90/landing_screen.png)
 
+
+**Given a story like:**
+
+The wind in the coastal town never stopped moving, as if it were afraid that stillness might make it forget. On the morning the boy 
+decided to leave, he stood on the rooftop of his house and held a paper glider between his fingers, feeling the air test its wings. 
+He had folded it years ago with someone whose face he could no longer recall clearly, only the sound of her laughter and the way she 
+always leaned into the wind instead of away from it. People said memories faded because time demanded space for new ones, but the boy 
+believed they faded because they were afraid of being carried too far. He had stayed longer than he meant to, returning each day to the 
+same rooftop, releasing the same fragile gliders, watching them rise and fall like thoughts that refused to settle. The town below 
+continued its quiet routines—fishermen mending nets, windmills creaking, waves pressing themselves against the shore as if asking to be 
+let in. On his final morning, the wind grew stronger than usual. The glider tore at one edge, yet instead of falling, it rose higher 
+than any before it. The boy ran down the stairs and through the streets, chasing the white flicker against the blue sky, until he reached 
+the cliffs where the land finally gave up and became air. There, the wind caught the glider fully and carried it out over the sea, 
+where it dissolved into distance. For the first time, the boy did not feel loss. He felt answered. He turned away from the ocean,
+shouldered his bag, and walked toward the road leading out of town. Behind him, the wind kept moving—not to hold him, but to remember 
+him.
+
+The following story-book is generated:
+![page1](https://github.com/hassanayoub409/agent-stories/blob/c0541cb5cb042d54f049971ec5a69c5611c30e90/page1.png)
+![page2](https://github.com/hassanayoub409/agent-stories/blob/c0541cb5cb042d54f049971ec5a69c5611c30e90/page2.png)
+![page3](https://github.com/hassanayoub409/agent-stories/blob/c0541cb5cb042d54f049971ec5a69c5611c30e90/page3.png)
+![page4](https://github.com/hassanayoub409/agent-stories/blob/c0541cb5cb042d54f049971ec5a69c5611c30e90/page4.png)
+![page5](https://github.com/hassanayoub409/agent-stories/blob/c0541cb5cb042d54f049971ec5a69c5611c30e90/page5.png)
 ---
 
 ## Setup
