@@ -51,7 +51,7 @@ The `suggestion/` folder contains sample stories and their generated scene image
 
 ## Screenshots
 
-> _Add screenshots here_
+TODO: Add screenshots of a sample story and its corresponding image-book.
 
 ---
 
