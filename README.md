@@ -65,8 +65,8 @@ The `suggestion/` folder contains sample stories and their generated scene image
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/Agent-Stories.git
-cd Agent-Stories
+git clone https://github.com/YOUR_USERNAME/agent-stories.git
+cd agent-stories
 ```
 
 ### 2. Create a virtual environment
@@ -264,12 +264,18 @@ Full interactive docs available at `http://localhost:8000/docs` when the server 
 
 ---
 
-## Author
+## Authors
 
 **Hassan Ayoub** — 2025
+**Shahram Munsaf** — 2025
+**Own Mustafvi** — 2025
+**Abdul Basit** — 2025
+
 
 ---
 
 ## License
-
+[![License](https://img.shields.io/badge/License-MIT-yellow)](LICENSE)
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+**This project was developed as a part of Artificial Intelligence course requirement at Punjab University College of Information Technology.**
