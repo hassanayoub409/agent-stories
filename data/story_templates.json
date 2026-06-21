@@ -1,0 +1,42 @@
+{
+  "templates": [
+    {
+      "id": 1,
+      "genre": "Mystery",
+      "title": "The Midnight Detective",
+      "template": "A detective standing in the rain, heavy noir atmosphere. The city lights reflect on wet streets. A mysterious figure disappears around the corner.",
+      "style": "Noir"
+    },
+    {
+      "id": 2,
+      "genre": "Sci-Fi",
+      "title": "Neon Future",
+      "template": "A cyberpunk cityscape at night, neon lights everywhere. Flying vehicles zoom past towering skyscrapers. A hacker looks out from a high-rise apartment.",
+      "style": "Cyberpunk"
+    },
+    {
+      "id": 3,
+      "genre": "Fantasy",
+      "title": "Medieval Quest",
+      "template": "A medieval knight stands before an ancient castle. Dragons fly overhead. A magical sword glows with ethereal light.",
+      "style": "Cinematic"
+    },
+    {
+      "id": 4,
+      "genre": "Romance",
+      "title": "Sunset Romance",
+      "template": "Two people walking hand in hand on a beach at sunset. Soft watercolor sky. Gentle waves crash on the shore.",
+      "style": "Watercolor"
+    },
+    {
+      "id": 5,
+      "genre": "Action",
+      "title": "City Chase",
+      "template": "A high-speed chase through city streets. Cars weaving through traffic. Explosions in the background.",
+      "style": "Cinematic"
+    }
+  ],
+  "genres": ["Mystery", "Sci-Fi", "Fantasy", "Romance", "Thriller", "Horror", "Drama", "Comedy", "Action", "Adventure"],
+  "styles": ["Cinematic", "Anime", "Watercolor", "Noir", "Cyberpunk", "Realistic", "Abstract"]
+}
+

@@ -1,0 +1,578 @@
+/* Structural Layout */
+
+/* GLOBAL SCROLLBAR CUSTOMIZATION */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border-light);
+    border-radius: 3px;
+    transition: background 0.2s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--text-secondary);
+}
+
+.app-container {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+/* --- Sidebar --- */
+.sidebar {
+    width: 260px;
+    background-color: var(--bg-panel);
+    border-right: 1px solid var(--border-light);
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-md);
+    transition: all 0.3s var(--ease-out);
+    z-index: 50;
+    flex-shrink: 0;
+}
+
+.sidebar.collapsed {
+    width: 60px;
+    /* Slimmer as requested "perfect" previous state */
+    padding: var(--space-md) 8px;
+    align-items: center;
+}
+
+
+/* Header */
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-lg);
+    height: 36px;
+    flex-shrink: 0;
+    width: 100%;
+}
+
+.sidebar.collapsed .sidebar-header {
+    justify-content: center;
+    margin-bottom: var(--space-md);
+}
+
+.sidebar.collapsed .logo {
+    display: none;
+}
+
+/* Hide logo text */
+.sidebar.collapsed #toggle-sidebar {
+    margin: 0;
+}
+
+.logo {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+
+/* Primary Action (New Story) - FIXED ALIGNMENT */
+.nav-item.primary-action {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff !important;
+    color: #08080a !important;
+    padding: 0 14px;
+    /* Fix padding to center content vertically */
+    border-radius: 8px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    transition: all 0.2s;
+    height: 44px;
+    /* Fixed height */
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.nav-item.primary-action:hover {
+    background-color: #ffffff !important;
+    color: #08080a !important;
+    transform: scale(1.02);
+    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+}
+
+.nav-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    /* Adjust spacing */
+    width: 20px;
+}
+
+.nav-text {
+    line-height: 1;
+    /* Fix vertical alignment */
+}
+
+/* COLLAPSED LOGIC FOR NEW STORY */
+.sidebar.collapsed .nav-item.primary-action {
+    width: 44px;
+    /* Force squares */
+    padding: 0;
+    justify-content: center;
+}
+
+.sidebar.collapsed .nav-text {
+    display: none !important;
+    /* Force hide text */
+}
+
+.sidebar.collapsed .nav-icon {
+    margin-right: 0;
+}
+
+
+/* Search Bar - FIXED ALIGNMENT */
+.sidebar-search {
+    margin-top: var(--space-sm);
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 6px;
+    padding: 0 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s;
+    overflow: hidden;
+    height: 40px;
+    cursor: text;
+    flex-shrink: 0;
+}
+
+.search-icon-sidebar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+}
+
+/* Collapsed Search Logic */
+.sidebar.collapsed .sidebar-search {
+    background: transparent;
+    padding: 0;
+    width: 40px;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.sidebar.collapsed .sidebar-search:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+}
+
+.sidebar.collapsed .sidebar-search-input {
+    display: none;
+}
+
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    flex: 1;
+    min-height: 0;
+}
+
+.nav-top-group {
+    flex-shrink: 0;
+}
+
+/* History List */
+.history-list {
+    flex: 1;
+    /* Grow to fill all available space */
+    min-height: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    /* No horiz scroll */
+    margin-top: 10px;
+    padding-right: 4px;
+    /* Custom scrollbar styling */
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+}
+
+.history-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.history-list::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.history-list::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+}
+
+.history-list::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* History Items */
+.history-item-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    position: relative;
+    height: auto;
+    margin-bottom: 4px;
+    transition: background 0.2s;
+}
+
+.history-item-wrap:hover,
+.history-item-wrap.active-context {
+    /* Added Active State */
+    background: rgba(255, 255, 255, 0.08);
+    /* More visible active state */
+}
+
+.history-item {
+    font-size: 0.95rem;
+    font-family: var(--font-ui);
+    color: var(--text-muted);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    flex: 1;
+    text-align: left;
+}
+
+.history-item-wrap:hover .history-item,
+.history-item-wrap.active-context .history-item {
+    color: var(--text-primary);
+}
+
+/* Collapsed History */
+.sidebar.collapsed .history-list {
+    display: none;
+}
+
+.sidebar.collapsed .nav-section-title {
+    display: none;
+}
+
+
+/* Kebab Menu Styling - NOW HANDLED BY GLOBALS MOSTLY */
+.history-actions-kebab {
+    position: relative;
+    opacity: 0;
+    transition: opacity 0.2s;
+    display: flex;
+    align-items: center;
+}
+
+/* Show kebab on hover OR if active-context is maintained */
+.history-item-wrap:hover .history-actions-kebab,
+.history-item-wrap.active-context .history-actions-kebab {
+    opacity: 1;
+}
+
+.kebab-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    padding: 4px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+}
+
+.kebab-btn:hover,
+.history-item-wrap.active-context .kebab-btn {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+}
+
+/* Global Menu (Appended to Body via JS for positioning) */
+.global-context-menu {
+    position: fixed;
+    /* Fixed to viewport */
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: 6px;
+    min-width: 140px;
+    z-index: 9999;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    padding: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.global-context-menu.hidden {
+    display: none;
+}
+
+.menu-item {
+    padding: 8px 10px;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    cursor: pointer;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.menu-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-primary);
+}
+
+.menu-item.delete:hover {
+    background: rgba(255, 85, 85, 0.1);
+    color: #ff5555;
+}
+
+
+/* User Profile Footer */
+.sidebar-footer {
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--border-light);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.sidebar.collapsed .sidebar-footer {
+    border-top: none;
+    align-items: center;
+    width: 100%;
+    /* Keep width so we can center items */
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    border-radius: 6px;
+    padding: 4px;
+    transition: 0.2s;
+    overflow: hidden;
+    position: relative;
+    /* Hide details on collapse */
+}
+
+.user-info:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.sidebar.collapsed .user-info {
+    justify-content: center;
+    gap: 0;
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.user-info:hover {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.sidebar.collapsed .user-info:hover {
+    background: transparent;
+}
+
+/* Hide Details in Collasped */
+.sidebar.collapsed .user-details {
+    display: none !important;
+}
+
+.avatar-circle {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+}
+
+.user-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.user-name {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.user-plan {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+}
+
+.upgrade-btn {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid var(--border-light);
+    border-radius: 6px;
+    font-size: 0.8rem;
+    color: var(--text-primary);
+    background: transparent;
+    transition: 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.upgrade-btn:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Hide Upgrade Btn COMPLETELY in Collapsed as requested */
+.sidebar.collapsed .upgrade-btn {
+    display: none !important;
+}
+
+
+/* --- Main Content & Chat Feed --- */
+.main-content {
+    flex: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-app);
+}
+
+.top-bar {
+    height: 60px;
+    padding: 0 var(--space-lg);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 40;
+}
+
+.action-btn-text {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    padding: 6px 12px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.05);
+    margin-right: 8px;
+    transition: 0.2s;
+    cursor: pointer;
+    border: none;
+}
+
+.action-btn-text:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.top-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.chat-feed {
+    flex: 1;
+    overflow-y: auto;
+    padding: var(--space-xl) 20%;
+    padding-bottom: 200px;
+    scroll-behavior: smooth;
+    /* global scrollbar applies */
+}
+
+/* Book container should match input area width for alignment */
+.chat-feed .book-container-wrap {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+}
+
+/* --- Interaction Area States --- */
+.interaction-area {
+    position: absolute;
+    width: 100%;
+    transition: all 0.6s var(--ease-fluid);
+    padding: 0 var(--space-lg);
+    display: flex;
+    justify-content: center;
+    z-index: 30;
+    pointer-events: none;
+}
+
+.interaction-area.center-state {
+    top: 50%;
+    transform: translateY(-50%);
+    bottom: auto;
+}
+
+.interaction-area.center-state .interaction-content {
+    width: 100%;
+    max-width: 700px;
+    pointer-events: auto;
+}
+
+.interaction-area.bottom-state {
+    top: auto;
+    bottom: var(--space-lg);
+    transform: translateY(0);
+}
+
+.interaction-area.bottom-state .interaction-content {
+    width: 100%;
+    max-width: 800px;
+    pointer-events: auto;
+    margin: 0 auto;
+    /* Center align to match book canvas */
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        position: absolute;
+        transform: translateX(-100%);
+        width: 260px;
+        height: 100%;
+    }
+
+    .sidebar.active {
+        transform: translateX(0);
+    }
+
+    .chat-feed {
+        padding: var(--space-md);
+        padding-bottom: 160px;
+    }
+
+    .interaction-area.center-state .interaction-content,
+    .interaction-area.bottom-state .interaction-content {
+        max-width: 100%;
+    }
+}
