@@ -291,8 +291,11 @@ Full interactive docs available at `http://localhost:8000/docs` when the server 
 ## Authors
 
 **Hassan Ayoub** — 2025
+
 **Shahram Munsaf** — 2025
+
 **Own Mustafvi** — 2025
+
 **Abdul Basit** — 2025
 
 
